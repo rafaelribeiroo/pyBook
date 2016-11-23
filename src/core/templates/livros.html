@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block javascript %}
+    <script src="{% static "js/livros.js" %}"></script>
+{% endblock %}
+
+{% block content %}
+
+    <h1 class="page-header">Livros</h1>
+
+    <p>
+        <button type="button" class="btn btn-primary js-create-book">
+            <span class="glyphicon glyphicon-plus"></span>
+            Novo Livro
+        </button>
+    </p>
+
+    <table class="table" id="book-table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Tipo</th>
+                <th>Data de Publicação</th>
+                <th>Qntde. Páginas</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for livro in livros %} <!-- for nomeFuncao in nomeVariavel que recebe os dados -->
+                <tr>
+                    <td>{{ livro.id }}</td>
+                    <td>{{ livro.titulo }}</td>
+                    <td>{{ livro.autor }}</td>
+                    <td>{{ livro.tipoLivro }}</td>
+                    <td>{{ livro.dataPublicacao }}</td>
+                    <td>{{ livro.paginas }}</td>
+                    <td>{{ livro.preco }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="7" class="text-center bg-warning">Não há livros cadastrados</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+    <div class="modal fade" id="modal-book">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

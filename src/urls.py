@@ -16,9 +16,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from src.books import views
+from django.conf.urls import url, include # Incluir outras URLs
+
+from src.books import urls # Múltiplas URLS a fim de manter a URL principal mais clean
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^livros/$', views.livro, name='livro_lista'),
+    url(r'^livros/', include('src.books.urls')),
 ]
