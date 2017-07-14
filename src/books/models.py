@@ -1,4 +1,6 @@
 from django.db import models
+from django.utils.translation import ugettext_lazy as _
+
 
 from .data import tiposLivro
 # Create your models here.
@@ -10,6 +12,10 @@ class Livro(models.Model):
     paginas        = models.IntegerField('Qntd. de Páginas', blank=True, null=True)
     tipoLivro      = models.PositiveSmallIntegerField('Tipo de Livro', choices=tiposLivro)
 
+    class Meta:
+        ordering = ['titulo']
+        verbose_name = "livro"
+        verbose_name_plural = "livros"
 
     def __str__(self):
         return self.titulo + ' - ' + self.autor
