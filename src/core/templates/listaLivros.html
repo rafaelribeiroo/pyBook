@@ -1,0 +1,27 @@
+{% for livro in livros %} <!-- for nomeFuncao in nomeVariavel que recebe os dados -->
+    <tr>
+        <td>{{ livro.id }}</td>
+        <td>{{ livro.titulo }}</td>
+        <td>{{ livro.autor }}</td>
+        <td>{{ livro.get_tipoLivro_display }}</td>
+        <td>{{ livro.dataPublicacao }}</td>
+        <td>{{ livro.paginas }}</td>
+        <td>{{ livro.preco }}</td>
+        <td>
+            <button type="button"
+                    class="btn btn-warning btn-sm js-update-book"
+                    data-url="{% url 'livro_alterar' livro.id %}">
+                    <span class="glyphicon glyphicon-pencil"></span> Alterar
+            </button>
+            <button type="button"
+                    class="btn btn-danger btn-sm js-delete-book"
+                    data-url="{% url 'livro_deletar' livro.id %}">
+                    <span class="glyphicon glyphicon-trash"></span> Deletar
+            </button>
+        </td>
+    </tr>
+{% empty %}
+    <tr>
+        <td colspan="7" class="text-center bg-warning">Não há livros cadastrados</td>
+    </tr>
+{% endfor %}

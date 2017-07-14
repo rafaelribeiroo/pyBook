@@ -1,0 +1,16 @@
+<form method="post" action="{% url 'livro_deletar' livro.id %}" class="js-book-delete-form">
+    {% csrf_token %}
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Confirmar exclusão do livro</h4>
+    </div>
+    <div class="modal-body">
+        <p class="lead">Você tem certeza de que deseja deletar o livro: <strong>{{ livro.titulo }}</strong>?</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        <button type="submit" class="btn btn-danger">Deletar Livro</button>
+    </div>
+</form>
