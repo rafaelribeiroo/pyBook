@@ -65,6 +65,7 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+                'django.template.context_processors.i18n',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -115,11 +116,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Provide a lists of languages which your site supports.
 LANGUAGES = [
+    ('pt-br', _('Portuguese')), #Não preciso criar makemessages pra ele, porque é o nativo
+
     ('en', _('English')),
     ('es', _('Spanish')),
 ]
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'pt-BR'
 
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'src/locale/')

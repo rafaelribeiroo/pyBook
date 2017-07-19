@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.conf.urls.i18n import i18n_patterns
 
 from django.conf.urls import url, include # Incluir outras URLs
 
-from src.books import urls # Múltiplas URLS a fim de manter a URL principal mais clean
+from src.books import urls # Multiplas URLS a fim de manter a URL principal mais clean
 
-urlpatterns = [
+urlpatterns = i18n_patterns (
     url(r'^admin/', admin.site.urls),
     url(r'^livros/', include('src.books.urls')),
-]
+    url(r'^i18n/', include('django.conf.urls.i18n')),
+)
