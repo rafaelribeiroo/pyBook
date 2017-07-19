@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'qa4k7+3tml7@)x=y_cg%&3g9mzqf7359$#*l=he4-!he4-$b+_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -79,10 +79,10 @@ WSGI_APPLICATION = 'src.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'book',
+        'NAME': 'livro',
         # 'NAME': os.path.join(BASE_DIR, 'mydb'),
-        'USER': 'rafael',
-        'PASSWORD': 'pr0!ml$1',
+        'USER': 'ribeiro',
+        'PASSWORD': '12577521',
         'HOST': '127.0.0.1',
         'PORT': '', # 8000 is default
     }
@@ -126,3 +126,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'src/core/staticfiles/'
