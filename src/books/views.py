@@ -7,7 +7,7 @@ from .models import Livro
 from .forms import LivroForm
 
 def livro(request):
-    livros = Livro.objects.all()
+    livros = Livro.objects.all().order_by('-id')
     return render(request, 'livros.html', {'livros': livros})
 
 def salvar_form_livro(request, form, template_name):
@@ -16,7 +16,7 @@ def salvar_form_livro(request, form, template_name):
         if form.is_valid():
             form.save()
             data['form_is_valid'] = True
-            livros = Livro.objects.all()
+            livros = Livro.objects.all().order_by('-id')
             data['html_book_list'] = render_to_string('listaLivros.html', {
                 'livros': livros
             })

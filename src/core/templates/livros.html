@@ -8,7 +8,24 @@
 
 {% block content %}
 
-    {{ LANGUAGE_CODE }}
+
+    <div id="languages">
+        <table >
+            <tr>
+                {% get_available_languages as languages %}
+                {% for key, item in languages %}
+                    <td>
+                        <form action="{% url 'set_language' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="language" value="{{key}}"/>
+                            <input id="lang_select_{{key}}" type = "image" src="/media/img/{{ key }}.gif" alt="{{ item }}"/>
+                        </form>
+                    </td>
+                {% endfor %}
+            </tr>
+        </table>
+    </div>
+
 
     <h1 class="page-header">{% trans 'Livros' %}</h1>
 
