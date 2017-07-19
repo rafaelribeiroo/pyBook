@@ -1,0 +1,50 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-18 22:56-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/core/templates/livros.html:11
+msgid "Livros"
+msgstr "Books"
+
+#: src/core/templates/livros.html:18
+msgid "Novo Livro"
+msgstr "New Book"
+
+#: src/core/templates/livros.html:26
+msgid "Título"
+msgstr "Title"
+
+#: src/core/templates/livros.html:27
+msgid "Autor"
+msgstr "Author"
+
+#: src/core/templates/livros.html:28
+msgid "Tipo"
+msgstr "Type"
+
+#: src/core/templates/livros.html:29
+msgid "Data de Publicação"
+msgstr "Publication Date"
+
+#: src/core/templates/livros.html:30
+msgid "Quantidade Páginas"
+msgstr "Number of pages"
+
+#: src/core/templates/livros.html:31
+msgid "Preço"
+msgstr "Price"

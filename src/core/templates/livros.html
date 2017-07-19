@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load static %}
 
 {% block javascript %}
@@ -7,14 +8,14 @@
 
 {% block content %}
 
-    <h1 class="page-header">Livros</h1>
+    <h1 class="page-header">{% trans 'Livros' %}</h1>
 
     <p>
         <button type="button"
                 class="btn btn-primary js-create-book"
                 data-url="{% url 'livro_criar' %}">
                 <span class="glyphicon glyphicon-plus"></span>
-                Novo Livro
+                {% trans 'Novo Livro' %}
         </button>
     </p>
 
@@ -22,12 +23,12 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>Título</th>
-                <th>Autor</th>
-                <th>Tipo</th>
-                <th>Data de Publicação</th>
-                <th>Qntde. Páginas</th>
-                <th>Preço</th>
+                <th>{% trans 'Título' %}</th>
+                <th>{% trans 'Autor' %}</th>
+                <th>{% trans 'Tipo' %}</th>
+                <th>{% trans 'Data de Publicação' %}</th>
+                <th>{% trans 'Quantidade Páginas' %}</th>
+                <th>{% trans 'Preço' %}</th>
             </tr>
         </thead>
         <tbody>
