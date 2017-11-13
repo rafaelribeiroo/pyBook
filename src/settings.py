@@ -123,7 +123,7 @@ LANGUAGES = [
     ('es', _('Spanish')),
 ]
 
-LANGUAGE_CODE = 'pt-BR'
+LANGUAGE_CODE = 'en'
 
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'src/locale/')
