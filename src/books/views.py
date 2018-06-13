@@ -10,6 +10,7 @@ def livro(request):
     livros = Livro.objects.all().order_by('-id')
     return render(request, 'livros.html', {'livros': livros})
 
+
 def salvar_form_livro(request, form, template_name):
     data = dict()
     if request.method == 'POST':
@@ -26,12 +27,14 @@ def salvar_form_livro(request, form, template_name):
     data['html_form'] = render_to_string(template_name, context, request=request)
     return JsonResponse(data)
 
+
 def criarLivro(request):
     if request.method == 'POST':
         form = LivroForm(request.POST)
     else:
         form = LivroForm()
     return salvar_form_livro(request, form, 'cadastraLivro.html')
+
 
 def alteraLivro(request, pk):
     livro = get_object_or_404(Livro, pk=pk)
@@ -40,6 +43,7 @@ def alteraLivro(request, pk):
     else:
         form = LivroForm(instance=livro)
     return salvar_form_livro(request, form, 'alteraLivro.html')
+
 
 def deletaLivro(request, pk):
     livro = get_object_or_404(Livro, pk=pk)
